@@ -1,0 +1,99 @@
+Docker Commands:
+--------------------------------------------------------
+1. docker build . ---> To build the docker images.
+--------------------------------------------------------
+2. docker image ls ---> To List Docker images.
+--------------------------------------------------------
+3. docker run -p 3000:3000 imageid ---> To Run the container on the base of the image.
+--------------------------------------------------------
+4. docker ps ---> List the running containers.
+--------------------------------------------------------
+5. docker stop containername ---> Stop the running container.
+--------------------------------------------------------
+6. docker start container --> Command to start the container.
+--------------------------------------------------------
+7. docker rm containername --> Remove the container.
+--------------------------------------------------------
+8. docker rm -f containername --> Forcefully remove the container.
+--------------------------------------------------------
+9. docker rmi imageid --> Remove the docker image
+--------------------------------------------------------
+10. docker run -d -p 3000:80 c847992af3b4 --> Run a container in detached mode.
+--------------------------------------------------------
+11. docker logs containername --> To find the logs of a container.
+docker logs -f containername --> Also using this command we will able to fetch the furture logs.
+--------------------------------------------------------
+12. docker start -a containername --> To start a container in attached mode.
+-----------------------------------------------------------
+13. docker run -it imagename --> To run the container in Interactive mode.
+------------------------------------------------------------
+14. docker image prune --> To remove all unused images.
+-----------------------------------------------------------
+15. docker run -it --rm imagename --> To remove the container automatically after the container is stopped
+--------------------------------------------------------------------------------------------------
+16. docker image inspect imagename --> Shows the information regarding image.
+--------------------------------------------------------------------------------
+17. docker cp dummy/. determined_mestorf:/test --> This command will copy the local file to container.
+-----------------------------------------------------------------------------------------------------
+18. --name --> Assign a name to the container.
+----------------------------------------------------------------------------
+19. docker build -t goals:node . --> Assigning Tags to the Docker Images.
+----------------------------------------------------------------------------
+20. docker tag oldtag new tag --> This command will rename the docker image tag.
+----------------------------------------------------------------------------
+21. docker push ishan221002/node-goalsapp --> Push Image to docker hub
+----------------------------------------------------------------------------
+22. docker volume ls --> List all the volumes available.
+----------------------------------------------------------------------------
+23. docker run -p 3000:80 -d --name feedback-app -v feedback:/app/feedback feedback-node:volumes --> create named volumes.
+------------------------------------------------------------------------------
+24. docker volume rm VOL_NAME or docker volume prune --> To remove the unused volumes.
+-------------------------------------------------------------------------------
+25.docker run -p 3000:80 -d --name feedback-app -v feedback:/app/feedback -v "C:\Ishan Data\Ishan Laptop\Docker\Docker-Files\data-volumes-03-adj-node-code\data-volumes-03-adj-node-code:/app" -v /app/node_modules feedback-node:volumes --> Command to create Bind Mounts
+-----------------------------------------------------------------------------------------
+26. docker volume create volumename --> To create a volume
+----------------------------------------------------------------------------------------
+27. docker volume inspect volumename --> To get the information about the volume.
+-----------------------------------------------------------------------------------------
+28. docker volume rm volumename --> To remove the volume
+---------------------------------------------------------------------------
+29. docker volume prune --> To remove all your unused volumes.
+--------------------------------------------------------------------------
+30. The difference between docker image prune and docker image prune -a lies in the scope of images they remove:
+docker image prune
+Removes only dangling images:
+A dangling image is an image that is not tagged and is no longer referenced by any container.
+These images typically show <none> as their repository or tag in docker images.
+Scope:
+Limited to removing images that are leftover layers or intermediates from image builds.
+-------------------------------------------------------------------------------------
+docker image prune -a
+Removes all unused images:
+This includes both dangling images and images not used by any container (whether tagged or untagged).
+Scope:
+Broader and more aggressive cleanup, as it targets all images not actively associated with any containers.
+----------------------------------------------------------------------------------------------------------------------
+31. docker attach containername ---> To get attach to a specific container fetch realtime logs.
+-------------------------------------------------------------------------
+32. docker run -d -p 3000:8000 --rm --env PORT=8000 --name feedbackapp -v feedbackvol:/app/feedback feedback-node:env --> setting up the environments.
+docker build -t feedback-node:dev --build-arg DEFAULT_PORT=8000 . --> arg passed during build
+------------------------------------------------------------------------------------------------------------------------------------------------------
+33. docker run -d --name mongodb mongo ----> fetch and create mongodb image and run the container
+----------------------------------------------------------------------------------------------------------
+34. docker container inspect mongodb --> fetch the mongodb container details
+--------------------------------------------------------------------------------------------------------------
+35. docker network create networkname --> creating a network
+----------------------------------------------------------------------------------------------------------------
+36. docker network ls --> list all the networks
+-----------------------------------------------------------------------------------------------------------------
+37. docker-compose up --> start container
+--------------------------------------------------------------------------------------------------------------
+38. docker-compose down --> delete containers only volumes persist
+----------------------------------------------------------------------------------------------------------------------------
+39. docker-compose up  -d --> spin up the containers in detach mode
+----------------------------------------------------------------------------------------------------------
+
+
+
+
+
